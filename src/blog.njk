@@ -1,0 +1,22 @@
+---
+title: Blog
+layout: 'base.njk'
+---
+
+<main>
+    <h1 class="hero">Blog</h1>
+    <br>
+    {%- for post in collections.post | reverse -%}
+    <div class="card-wrapper">
+        <article class="card">
+            <img src="{{post.data.image}}" alt="{{post.data.imageAlt}}" class="card-image">
+            <div class="card-content">
+                <h2>{{post.data.title}}</h2>
+                <h3>{{post.data.subTitle}}</h3>
+                <a href="{{post.url}}" target="_blank">Read More &#10230;</a>
+            </div>
+
+        </article>
+    </div>
+    
+</main>
