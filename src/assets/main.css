@@ -1,0 +1,289 @@
+@layer base {
+    :root {
+      /* colors */
+    --black: #000000;
+    --dark-gray: #333333;
+    --light-gray: #999999;
+    --orange: #EC5728;
+    --green: #31b28a;
+    --lightgreen: #8cdfc5;
+    --red: #ff4404;
+    --white: #ffffff;
+
+      /* font families */
+    --main: "Lato", sans-serif;
+    --heading: "Josefin Sans", sans-serif;
+    --mono: "Fira mono", monospace;
+
+      /* type scale */
+    --base-size: 1.5rem;
+    --scale: 1.12;
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--base-size);
+    --small: calc(var(--base-size) / var(--scale));
+    }
+
+    /* border box model: https://css-tricks.com/box-sizing/ */
+    html {
+        box-sizing: border-box;
+    }
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
+    .sr-only:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    body {
+        font-family: var(--main);
+        line-height: 1;
+        font-size: var(--base-size);
+        margin: 1rem;
+        padding: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--heading);
+        text-transform: uppercase;
+    }
+    h1 {
+        font-size: var(--h1);
+    }
+    h2 {
+        font-size: var(--h2);
+    }
+    h3 {
+        font-size: var(--h3);
+    }
+    h4 {
+        font-size: var(--h4);
+    }
+    h5 {
+        font-size: var(--h5);
+    }
+    h6 {
+        font-size: var(--h6);
+    }
+    .mono {
+        font-family: var(--mono);
+    }
+
+    .colors {
+        display: flex;
+      /* you could do this with grid as well, but you may need a few more lines of code */
+    }
+    .colors > * {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        border: 1px solid black;
+    }
+    .white {
+        background-color: var(--white);
+    }
+    .black {
+        background-color: var(--black);
+    }
+    .orange {
+        background-color: var(--orange);
+    }
+    .green {
+        background-color: var(--green);
+    }
+    .lightgreen {
+        background-color: var(--lightgreen);
+    }
+    .red {
+        background-color: var(--red);
+    }
+    a {
+        color: var(--green);
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    img {
+        max-width: 100%;
+        position: top;
+    }
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+    .button {
+        display: inline-block;
+        background-color: var(--green);
+        color: var(--black);
+        padding: 1rem 0.8rem 0.8rem 0.8rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: var(--heading);
+        font-size: var(--small);
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1;
+    }
+    .button:hover {
+        background-color: var(--orange);
+    }
+}
+@layer home {
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-avatar {
+        border-radius: 50%;
+        box-shadow: 
+        rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, 
+        rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    }
+}
+@layer nav {
+    .overlay {
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: var(--black);
+        opacity: 95%;
+        overflow-y: hidden;
+        transition: 0.5s;
+    }
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        margin-top: 30px;
+        padding: 2rem;
+    }
+    .overlay a {
+        padding: 16px;
+        text-decoration: none;
+        font-size: 36px;
+        color: var(--light-gray);
+        display: block;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .overlay a:hover, .overlay a:focus {
+        color: var(--white);
+    }
+    .overlay .closebtn {
+        position: absolute;
+        top: 2px;
+        right: 4px;
+        font-size: 48px;
+    }
+    .hamburger {
+        font-size: var(--h3);
+        text-transform: uppercase;
+        cursor:pointer;
+        display:flex;
+        justify-content:flex-end;
+        margin: 0.5rem;
+        padding: 16px;
+    }
+}
+@layer blog-cards {
+    .card-wrapper {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 2fr));
+        grid-auto-rows: auto;
+    }
+
+    .card {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        transition: all 500ms;
+        box-shadow: 
+            rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, 
+            rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+        border-radius: 6px;
+    }
+    .card:hover {
+        box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+        transform: translateY(0px) scale(1.025);
+    }
+
+    .card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(60%);    
+        z-index: -1;
+        border-radius: 6px;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        text-align: column;
+        position: relative;
+        margin: 1rem;
+        padding: .5rem;
+        z-index: 1;
+        color: var(--white);
+        -webkit-text-stroke: var(--black) .25px;
+    }
+    .card-content :is(h2,h3) {
+        margin: 16px;
+        -webkit-text-stroke: var(--black) 1px;
+    }
+    .card-content h2 {
+        font-size: var(--base-size * 1.4);
+    }
+    .card-content h3 {
+        font-size: var(--base-size);
+    }
+    .card-content a {
+        display: flex;
+        justify-content: right;
+        bottom: 0;
+        margin: 4px;
+        color: var(--white);
+    }
+}
+
+@layer blog-post {
+    .blog-post-hero-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 2fr));
+    }
+}
+
+@media screen and (max-height: 360px) {
+    .overlay {overflow-y: auto;}
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+}
