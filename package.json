@@ -1,0 +1,28 @@
+{
+  "name": "jeremy-brien-portfolio",
+  "version": "1.0.0",
+  "description": "personal website and portfolio of work",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brienjl/my-portfolio.git"
+  },
+  "keywords": [
+    "website",
+    "11ty"
+  ],
+  "author": "jeremy lawrence brien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brienjl/my-portfolio/issues"
+  },
+  "homepage": "https://github.com/brienjl/my-portfolio#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
