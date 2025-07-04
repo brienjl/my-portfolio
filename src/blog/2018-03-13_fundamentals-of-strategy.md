@@ -1,12 +1,13 @@
 ---
-title: A Strategy Framework
+title: Foundations in Strategy
+subtitle: The Three Pillars
 author: Jeremy Brien
-date: 2025-06-19
+date: 2018-03-13
 controlTags: ["post", "featured"]
-tags: ["strategy"]
+tags: ["opinion"]
 image: /assets/blog/steer-the-ship.webp
-imageAlt: Steering the ship of strategy
-description: Most strategies fail not from a lack of vision, but from poor execution and buzzword overload. This post breaks down a practical, no-fluff framework built on operational performance, customer service, and opportunity spotting. If you’re tired of strategy that sounds good but goes nowhere—start here.
+imageAlt: an abstract painting of a person in a business suit steering a ship down a river
+description: Most strategies fail not from a lack of vision, but from poor execution and buzzword overload. This post breaks down a practical, no-fluff framework built on operational performance, customer service, and opportunity spotting.
 ---
 
 ## MOST STRATEGIES FAIL.
